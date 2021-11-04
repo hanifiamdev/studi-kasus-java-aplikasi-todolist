@@ -2,8 +2,10 @@ public class AplikasiTodolist {
 
     public static String[] model = new String[10];
 
+    public static java.util.Scanner scanner = new java.util.Scanner(System.in);
+
     public static void main(String[] args) {
-        testRemoveTodoList();
+        testInput();
     }
 
     /**
@@ -26,6 +28,8 @@ public class AplikasiTodolist {
         model[1] = "Studi Kasus Java Dasar : Aplikasi TodoList";
         showTodoList();
     }
+
+
 
     /**
      * Menambah todo ke list
@@ -103,6 +107,21 @@ public class AplikasiTodolist {
 
         result = removeTodoList(2);
         showTodoList();
+    }
+
+
+    public static String input(String info) {
+        System.out.print(info + " : ");
+        String data = scanner.nextLine();
+        return data;
+    }
+
+    public static void testInput() {
+        var name = input("Nama");
+        System.out.println("Hi " + name);
+
+        var channel = input("Channel");
+        System.out.println(channel);
     }
 
     /**
