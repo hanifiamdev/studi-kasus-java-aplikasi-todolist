@@ -5,13 +5,14 @@ public class AplikasiTodolist {
     public static java.util.Scanner scanner = new java.util.Scanner(System.in);
 
     public static void main(String[] args) {
-        testInput();
+        testViewShowTodoList();
     }
 
     /**
      * Menampilkan todo list
      */
     public static void showTodoList() {
+        System.out.println("TODOLIST");
         for (var i = 0; i < model.length; i++) {
             var todo = model[i];
             var no = i + 1;
@@ -132,20 +133,29 @@ public class AplikasiTodolist {
             System.out.println("MENU : ");
             System.out.println("1. Tambah");
             System.out.println("2. Hapus");
-            System.out.println("3. Keluar");
+            System.out.println("x. Keluar");
 
             var input = input("Pilih");
             if (input.equals("1")) {
                 viewaddTodoList();
             } else if (input.equals("2")) {
                 viewRemoveTodoList();
-            } else if (input.equals("3")) {
+            } else if (input.equals("x")) {
                 break;
             } else {
                 System.out.println("Pilihan tidak dimengerti");
             }
         }
 
+    }
+
+    public static void testViewShowTodoList() {
+        addTodoList("Satu");
+        addTodoList("Dua");
+        addTodoList("Tiga");
+        addTodoList("Empat");
+        addTodoList("Lima");
+        viewShowTodoList();
     }
 
     /**
