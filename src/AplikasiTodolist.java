@@ -5,7 +5,7 @@ public class AplikasiTodolist {
     public static java.util.Scanner scanner = new java.util.Scanner(System.in);
 
     public static void main(String[] args) {
-        testViewShowTodoList();
+        testviewAddTodoList();
     }
 
     /**
@@ -137,7 +137,7 @@ public class AplikasiTodolist {
 
             var input = input("Pilih");
             if (input.equals("1")) {
-                viewaddTodoList();
+                viewAddTodoList();
             } else if (input.equals("2")) {
                 viewRemoveTodoList();
             } else if (input.equals("x")) {
@@ -161,8 +161,25 @@ public class AplikasiTodolist {
     /**
      * Menampilkan view add todo ke list
      */
-    public static void viewaddTodoList() {
+    public static void viewAddTodoList() {
+        System.out.println("MENAMBAH TODOLIST");
 
+        var todo = input("Todo (x Jika Batal)");
+
+        if(todo.equals("x")) {
+
+        } else {
+            addTodoList(todo);
+        }
+    }
+
+    public static void testviewAddTodoList() {
+        addTodoList("Satu");
+        addTodoList("Dua");
+
+        viewAddTodoList();
+
+        showTodoList();
     }
 
     /**
