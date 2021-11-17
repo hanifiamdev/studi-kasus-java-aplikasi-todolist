@@ -9,7 +9,7 @@ import view.TodoListView;
 public class TodoListViewTest {
 
     public static void main(String[] args) {
-        testAddTodoList();
+        testRemoveTodoList();
 
     }
 
@@ -33,6 +33,21 @@ public class TodoListViewTest {
 
         todoListView.addTodoList();
         todoListView.showTodoList();
+
+    }
+
+    public static void testRemoveTodoList() {
+        TodoListRepository todoListRepository = new TodoListRepositoryImpl();
+        TodoListService todoListService = new TodoListServiceImpl(todoListRepository);
+        TodoListView todoListView = new TodoListView(todoListService);
+
+        todoListService.addTodoList("Belajar Java Dasar");
+        todoListService.addTodoList("Belajar Java OOP");
+        todoListService.addTodoList("Belajar Java Standard Classes");
+
+        todoListService.showTodoList();
+        todoListView.removeTodoList();
+        todoListService.showTodoList();
 
     }
 }
